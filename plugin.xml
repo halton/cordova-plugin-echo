@@ -2,15 +2,15 @@
 <plugin id="cordova-plugin-intel-echo" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
 	<name>Echo</name>
 	<js-module name="Echo" src="www/Echo.js">
-		<clobbers target="cordova.plugins.Echo" />
+		<clobbers target="echo" />
 	</js-module>
 	<platform name="android">
 		<config-file parent="/*" target="res/xml/config.xml">
 			<feature name="Echo">
-				<param name="android-package" value="cordova-plugin-intel-echo.Echo" />\
+				<param name="android-package" value="org.apache.cordova.Echo" />\
 			</feature>
 		</config-file>
 		<config-file parent="/*" target="AndroidManifest.xml"></config-file>
-		<source-file src="src/android/Echo.java" target-dir="src/cordova-plugin-intel-echo/Echo" />
+		<source-file src="src/android/Echo.java" target-dir="src/org/apache/cordova" />
 	</platform>
 </plugin>

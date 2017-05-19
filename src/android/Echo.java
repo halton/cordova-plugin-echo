@@ -1,4 +1,4 @@
-package cordova-plugin-intel-echo;
+package org.apache.cordova;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
@@ -14,17 +14,17 @@ public class Echo extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        if (action.equals("coolMethod")) {
+        if (action.equals("say")) {
             String message = args.getString(0);
-            this.coolMethod(message, callbackContext);
+            this.say(message, callbackContext);
             return true;
         }
         return false;
     }
 
-    private void coolMethod(String message, CallbackContext callbackContext) {
+    private void say(String message, CallbackContext callbackContext) {
         if (message != null && message.length() > 0) {
-            callbackContext.success(message);
+            callbackContext.success("Hi " + message + ". I'm from Java.");
         } else {
             callbackContext.error("Expected one non-empty string argument.");
         }
